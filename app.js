@@ -66,7 +66,7 @@ const requestedPostId = req.params.postId;
   });
 
 });
-
+mongoose.set('useFindAndModify', false);
 app.get("/delete/posts/:postId", function(req, res){
 
 const reqPostId = req.params.postId;
@@ -75,10 +75,6 @@ Post.findByIdAndRemove({_id: reqPostId}, function(err){
 });
 
 });
-
-
-
-
 
 app.get("/about", function(req, res){
   res.render("about", {aboutContent: aboutContent});
