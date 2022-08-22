@@ -16,8 +16,16 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://admin-ayush:test123@cluster0.9ys8u.mongodb.net/blogDB", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://ayushjohry:ayush123@cluster0.omdsft8.mongodb.net/blogDB", {useNewUrlParser: true});
 
+function yourExportedfunction(){
+  const p=promiseThatMightRejectFn();
+  p.catch(() => {});
+  return p;
+
+}
+
+Promise.reject('foo').catch(() => {});
 const postSchema = {
   title: String,
   content: String
